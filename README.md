@@ -44,3 +44,10 @@ pip install -U g4f
 
 Código ejemplo de la página web:
 https://g4f.mintlify.app/get-started/usage
+
+
+
+## Huggingchat
+
+HuggingChat
+https://github.com/Soulter/hugging-chat-api
