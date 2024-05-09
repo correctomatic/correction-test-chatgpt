@@ -19,8 +19,15 @@ export GROQ_API_KEY=<your-api-key-here>
 
 
 docker build -t correction-test-chatgpt .
+
+
 docker run --rm correction-test-chatgpt
 
+
+docker run --rm \
+    -v ./exercise/example_exercise.txt:/tmp/exercise \
+    -v ./exercise/prompt.txt:/app/prompt.txt \
+    correction-test-chatgpt
 
 
 

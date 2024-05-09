@@ -1,9 +1,10 @@
 FROM python:3.12-alpine
 
 WORKDIR /app
-COPY requirements.txt /app
+
+COPY ./app /app
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY test1.py /app
+COPY ./exercise/prompt.txt /app
 
-CMD ["python", "test1.py"]
+CMD ["python", "correct_exercise.py"]
