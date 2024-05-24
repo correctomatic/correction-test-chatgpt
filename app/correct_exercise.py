@@ -1,4 +1,5 @@
 import time
+import json
 from g4f.client import Client
 
 MODEL = "gpt-3.5-turbo"
@@ -41,5 +42,16 @@ def call_LLM(max_retries=5, delay=1):
         time.sleep(delay)
     raise Exception("Max retries reached")
 
-result = call_LLM()
-print(result)
+try:
+    correction_result = call_LLM()
+    response = {
+        "success": True,
+        "comments": [ correction_result ]
+    }
+except Exception as e:
+    response = {
+        "success": False,
+        "error": str(e)
+    }
+
+print(json.dumps(response))

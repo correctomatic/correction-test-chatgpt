@@ -1,3 +1,57 @@
+# Correctomatic tester with LLM
+
+The purpose of this project is to generate a container that will correct exercises using a LLM model,
+integrated in the Correctomatic system.
+
+## How to use it
+
+
+## Testing the corrections
+
+To test the corrections, you must first build the container with the following command:
+```bash
+docker build -t correction-test-chatgpt .
+```
+
+Then you should run the container with the following command:
+
+```bash
+# Must be absolute paths
+PROMPT_FILE=$(pwd)/exercise/prompt.txt
+EXERCISE_FILE=$(pwd)/exercise/example_exercise.txt
+
+# Run the container
+docker run --rm \
+    -v "$EXERCISE_FILE":/tmp/exercise \
+    -v "$PROMPT_FILE":/app/prompt.txt \
+    correction-test-chatgpt
+```
+
+Once you're happy with the results, you can build the container and it will be ready to be used in the Correctomatic system.
+
+## Development
+
+TO-DO
+
+### Build the container
+
+### Run the container to develop the code
+
+TO-DO
+
+
+```bash
+docker run --rm \
+    -v "$EXERCISE_FILE":/tmp/exercise \
+    -v "$PROMPT_FILE":/app/prompt.txt \
+    -v "$(pwd)/app":/app \
+    correction-test-chatgpt
+```
+If you change the requirements.txt file you will need to rebuild the container.
+
+
+##### Notes
+
 
 pip install virtualenv
 python -m virtualenv .venv
@@ -15,6 +69,8 @@ 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
 
 
 export GROQ_API_KEY=<your-api-key-here>
+https://console.groq.com/playground
+
 
 
 
