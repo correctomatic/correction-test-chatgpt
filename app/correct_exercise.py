@@ -1,9 +1,14 @@
 import time
 import json
-from g4f.client import Client
+import os
+from importlib import import_module
+
+# LLM_PROVIDER can be either "groq" or "g4f"
+module_name = f'{os.getenv("LLM_PROVIDER")}_client'
+client = import_module(module_name).client
 
 MODEL = "gpt-3.5-turbo"
-PROMP_FILE = "prompt.txt"
+PROMP_FILE = "/prompt.txt"
 EXERCISE_FILE = "/tmp/exercise"
 
 def read_file(file_name):
@@ -13,8 +18,6 @@ def read_file(file_name):
 
 prompt = read_file(PROMP_FILE)
 exercise = read_file(EXERCISE_FILE)
-
-client = Client()
 
 messages=[
     {

@@ -31,9 +31,19 @@ Once you're happy with the results, you can build the container and it will be r
 
 ## Development
 
+Prepare the virtual env:
+
+```bash
+pip -m venv .venv
+```
+
 TO-DO
 
 ### Build the container
+
+TO-DO
+
+
 
 ### Run the container to develop the code
 
@@ -41,10 +51,16 @@ TO-DO
 
 
 ```bash
+# Must be absolute paths
+PROMPT_FILE=$(pwd)/exercise/prompt.txt
+EXERCISE_FILE=$(pwd)/exercise/example_exercise.txt
+LLM_PROVIDER=groq # or g4f
+
 docker run --rm \
     -v "$EXERCISE_FILE":/tmp/exercise \
-    -v "$PROMPT_FILE":/app/prompt.txt \
+    -v "$PROMPT_FILE":/prompt.txt \
     -v "$(pwd)/app":/app \
+    -e "LLM_PROVIDER=$LLM_PROVIDER" \
     correction-test-chatgpt
 ```
 If you change the requirements.txt file you will need to rebuild the container.
