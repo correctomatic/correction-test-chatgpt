@@ -4,12 +4,6 @@ ARG LLM_PROVIDER=groq
 ARG API_KEY
 ARG MODEL
 
-# Made available as environment variables in the container
-# They can be overridden when running the container.
-ENV LLM_PROVIDER=${LLM_PROVIDER}
-ENV MODEL=${MODEL}
-ENV API_KEY=${API_KEY}
-
 WORKDIR /app
 
 # Two different COPY commands are used to take advantage of
@@ -20,5 +14,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app /app
 COPY ./exercise/prompt.txt /
+
+# Made available as environment variables in the container
+# They can be overridden when running the container.
+ENV LLM_PROVIDER=${LLM_PROVIDER}
+ENV MODEL=${MODEL}
+ENV API_KEY=${API_KEY}
 
 CMD ["python", "correct_exercise.py"]

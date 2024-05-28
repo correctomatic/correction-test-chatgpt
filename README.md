@@ -14,6 +14,7 @@ export $(grep -v '^#' .env | xargs) && \
 docker build -t correction-test-chatgpt \
     --build-arg API_KEY=$API_KEY \
     --build-arg LLM_PROVIDER=$LLM_PROVIDER \
+    --build-arg MODEL=$MODEL \
     .
 ```
 
