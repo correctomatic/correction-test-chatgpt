@@ -10,7 +10,11 @@ integrated in the Correctomatic system.
 
 To test the corrections, you must first build the container with the following command:
 ```bash
-docker build -t correction-test-chatgpt .
+export $(grep -v '^#' .env | xargs) && \
+docker build -t correction-test-chatgpt \
+    --build-arg API_KEY=$API_KEY \
+    --build-arg LLM_PROVIDER=$LLM_PROVIDER \
+    .
 ```
 
 Then you should run the container with the following command:
@@ -23,7 +27,7 @@ EXERCISE_FILE=$(pwd)/exercise/example_exercise.txt
 # Run the container
 docker run --rm \
     -v "$EXERCISE_FILE":/tmp/exercise \
-    -v "$PROMPT_FILE":/app/prompt.txt \
+    -v "$PROMPT_FILE":/prompt.txt \
     correction-test-chatgpt
 ```
 

@@ -1,4 +1,0 @@
-La frase es El gato saltó sobre el tejado
-Sujeto: saltó
-Verbo: El gato
-Predicado: sobre el tejado

@@ -1,16 +1,7 @@
-El alumno debe resolver las siguientes ecuaciones. Cada una de ellas tiene una puntuación diferente:
+Un alumno ha entregado un trabajo referente a los hechos principales de la revolución francesa. Corrígelo indicando cómo podría mejorar el trabajo.
 
-1)  5x = -18 (3 puntos)
-2) x+5 = 7x - 8 (3 puntos)
-3) x^2 + 5 = 16 (4 puntos)
-
-Las soluciones correctas son:
-1) x = -18/5
-2) x = 13/6
-3) x = sqrt(11)
-
-Corrige el ejercicio del alumno. Debes indicar los errores en cada una de las ecuaciones. La corrección la leerá el alumno. No des explicaciones sobre cómo se tendría que obtener la solución.
-
-Devuelve la puntuación del ejercicio del alumno, sobre 10. Una ecuación correcta vale el 100%, una ecuación incorrecta vale cero.
-
-Contesta en castellano.
+Debe incluir al menos:
+- Convocatoria de los Estados Generales
+- La toma de la bastilla
+- Declaración de los Derechos del Hombre y del Ciudadano
+- Ascenso de Napoleón
